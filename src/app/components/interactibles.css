@@ -1,0 +1,45 @@
+.buttonBoilerplate{
+    font-family: Sora;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 2px;
+}
+
+.contactButton {
+    color: var(--color-white) !important;
+    background-color: var(--color-black) !important;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    z-index: 1;
+}
+
+.contactButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-blue);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.contactButton:hover::before {
+    left: 0;
+}
+
+.contactButton:hover {
+    color: var(--color-white) !important;
+}
+
+.contactButton:active::before {
+    left: 0;
+}
+
+.contactButton:active {
+    color: var(--color-white) !important;
+    transform: scale(0.98);
+}

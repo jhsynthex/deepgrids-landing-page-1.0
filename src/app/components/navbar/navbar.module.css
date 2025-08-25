@@ -1,0 +1,51 @@
+.navContainer {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    background-color: var(--color-white);
+    z-index: 100;
+    display: flex;
+}
+
+.navContentContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navLeftContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.smallGrayDivider {
+    height: 30px;
+    width: 1px;
+    background-color: var(--color-light-gray);
+    align-self: center;
+}
+
+.navLinksContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.navRightContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.contactButton {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    cursor: pointer;
+}
