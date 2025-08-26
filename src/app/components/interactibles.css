@@ -1,8 +1,9 @@
 .buttonBoilerplate{
     font-family: Sora;
     border: none;
-    padding: 10px 30px;
+    padding: 15px 25px;
     border-radius: 2px;
+    font-weight: 400;
 }
 
 .contactButton {

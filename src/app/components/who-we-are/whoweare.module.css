@@ -1,0 +1,34 @@
+.whoweareContainer{
+    height: 1000px;
+    width: 100%;
+    background-color: var(--color-light-gray);
+}
+
+.whoweareContentContainer {
+    display: flex;
+}
+
+.textContainer {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    padding-right: 60px;
+    margin-top: 50px;
+
+}
+
+.textContentContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.imageContainer {
+    display: flex;
+    flex: 5;
+    align-items: center;
+    justify-content: center;
+
+}
