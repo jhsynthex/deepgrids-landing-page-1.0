@@ -1,0 +1,62 @@
+.teamContainer {
+    height: auto;
+    width: 100%;
+    padding-top: 80px;
+}
+
+.teamContentContainer {
+    padding-top: 50px;
+}
+
+.pageHeader {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.pageHeader h2 {
+    font-weight: 600;
+}
+
+.headerText {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.teamCardContainer {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.coreTeamContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 200px;
+    row-gap: 60px;
+}
+
+.boardOfDirectorsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 200px;
+    row-gap: 60px;
+    align-items: start;
+}
+
+.boardOfAdvisorsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 200px;
+    row-gap: 60px;
+    align-items: start;
+}
+
+.tagLine {
+}
