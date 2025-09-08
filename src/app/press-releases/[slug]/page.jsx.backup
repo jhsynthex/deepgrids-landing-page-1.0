@@ -1,0 +1,45 @@
+import styles from './individualpress.module.css'
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
+import '/src/app/globals.css';
+import Image from 'next/image';
+
+export default async function PostPage({ params }) {
+    const { slug } = params;
+  
+    // Find the Markdown file
+    const filePath = path.join(process.cwd(), "posts", `${slug}.md`);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+  
+    // Parse frontmatter + content
+    const { data, content } = matter(fileContents);
+  
+    // Convert markdown to HTML
+    const processedContent = await remark()
+      .use(html)
+      .process(content);
+    const contentHtml = processedContent.toString();
+  
+    return (
+      <div className={styles.postContainer + ' wrapper'}>
+        <div className={styles.titleContainer}>
+            <h4>Annoucement</h4>
+            <div className={styles.title}>
+                <div className={styles.verticalBar}></div>
+                <div><h1>{data.title}</h1></div>
+                <p>{data.date}</p>
+                <div>
+                    <Image src={data.authorImage} width={50} height={50} alt='Image of author'></Image>
+                    <p>{data.author}</p>
+                </div>
+            </div>
+        </div>
+        <div className={styles.bodyContainer}>
+            <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        </div>
+      </div>
+    );
+  }

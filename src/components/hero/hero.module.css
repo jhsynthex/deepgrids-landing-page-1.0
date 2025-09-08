@@ -61,6 +61,10 @@
     color: var(--color-white) !important;
 }
 
+.visilinkLogo {
+    transform: scale(1.7);
+}
+
 .imageContainer {
     display: flex;
     flex: 1;
@@ -111,6 +115,11 @@
 .cert h4 {
     color: var(--color-white);
 }
+
+
+
+
+
 
 
 

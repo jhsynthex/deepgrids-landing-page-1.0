@@ -1,0 +1,68 @@
+.recentPressContainer {
+    height: auto;
+    margin-top: 120px;
+    background-color: red;
+}
+
+.newsletter {
+    background-color: var(--color-light-gray);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.emailCapture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+}
+
+.emailCapture p {
+    color: var(--color-dark-gray);
+}
+
+.emailContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+}
+
+.noSpam {
+    font-weight: 300;
+    color: var(--color-medium-gray);
+}
+
+.captureFields {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.submit {
+    text-decoration: none;
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+.captureFields input {
+    flex: 1;
+    width: 100%;
+}
+
+.captureFields button {
+    flex: 0 0 auto;
+    min-width: 120px;
+}
+
+

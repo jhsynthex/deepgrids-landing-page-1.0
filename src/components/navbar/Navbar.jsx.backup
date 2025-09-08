@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className={styles.navContentContainer + ' wrapper'}>
             <div className={styles.navLeftContainer}>
                 <div className={styles.navLogoContainer} onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-                    <Image src={'/assets/navbarLogo.svg'} alt='logo' width={125} height={50} className={styles.navLogo} />
+                    <Image src={'/assets/navbarLogo.svg'} alt='logo' width={125} height={125} className={styles.navLogo} />
                 </div>
                 <div className={styles.smallGrayDivider}></div>
                 <div className={styles.navLinksContainer}>

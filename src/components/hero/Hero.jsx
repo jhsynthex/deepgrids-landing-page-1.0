@@ -6,7 +6,6 @@ import '/src/app/globals.css';
 import { useEffect, useRef } from 'react';
 
 
-
 export default function Hero() {
     const callToActionRef = useRef(null);
 
@@ -31,7 +30,7 @@ export default function Hero() {
         <div className={styles.heroContainer + ' wrapper'}>
             <div className={styles.textContainer}>
                 <div className={styles.textContentContainer}>
-                    <Image src={'/assets/visilinkLogo.svg'} width={100} height={50}/>
+                    <Image src={'/assets/visilinkLogo2.svg'} width={125} height={50} className={styles.visilinkLogo}/>
                     <div className={styles.callToActionContainer}>
                         <div className={styles.callToAction}>
                             <div className={styles.whiteVertical}></div>
@@ -66,7 +65,6 @@ export default function Hero() {
                                     <h4>CCPA</h4>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

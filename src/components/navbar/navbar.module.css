@@ -5,7 +5,8 @@
     background-color: var(--color-black);
     z-index: 100;
     display: flex;
-    display: relative;
+    top: 0;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navContentContainer {
@@ -69,3 +70,13 @@
     left: 0;
     z-index: 101;
 }
+
+/* Navbar fade effects */
+.navVisible {
+    transform: translateY(0);
+}
+
+.navHidden {
+    transform: translateY(-100%);
+}
+

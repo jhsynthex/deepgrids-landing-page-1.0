@@ -44,3 +44,13 @@
     color: var(--color-white) !important;
     transform: scale(0.98);
 }
+
+.textInput {
+    outline: none;
+    border: solid;
+    border-width: 1px;
+    border-color: var(--color-dark-gray);
+    font-family: Sora;
+    text-decoration: none;
+    padding: 10px 15px;
+}
