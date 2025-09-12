@@ -26,52 +26,37 @@ export default function Hero() {
         return () => observer.disconnect();
     }, []);
 
+    const scrollToNewsletter = () => {
+        const newsletterElement = document.getElementById('newsletter');
+        if (newsletterElement) {
+            newsletterElement.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
+    const handleContactClick = () => {
+        window.location.href = 'mailto:matthew.jeanty@deepgrids.com';
+    };
+
     return (
-        <div className={styles.heroContainer + ' wrapper'}>
-            <div className={styles.textContainer}>
-                <div className={styles.textContentContainer}>
-                    <Image src={'/assets/visilinkLogo2.svg'} width={125} height={50} className={styles.visilinkLogo}/>
-                    <div className={styles.callToActionContainer}>
-                        <div className={styles.callToAction}>
-                            <div className={styles.whiteVertical}></div>
-                            <div className={styles.grayGradient}>
-                                <h1>Sell Software Smarter With <span className={styles.grayText}>Agentic AI Pricing.</span></h1>
-                            </div>
-                        </div>
-                        <p>Visilink is an end-to-end pricing platform for enterprise SaaS vendors. It uses a team of AI agents to unite all relevant data and stakeholders to streamline pricing workflows and optimize pricing strategies.</p>
-                        <div className={styles.buttonContainer}>
-                            <button className='buttonBoilerplate'>Explore Visilink</button>
-                            <button className='buttonBoilerplate contactButton heroContactButton'>Contact Us</button>
-                        </div>
-                    </div>
-                    <div className={styles.securityContainer}>
-                        <h4>Industry-leading Security</h4>
-                        <div className={styles.certificationContainer}>
-                            <div className={styles.certification}>
-                                <div className={styles.cert}>
-                                    <Image src='/assets/check.svg' width={20} height={20}/>
-                                    <h4>SOC 2</h4>
-                                </div>
-                                <div className={styles.cert}>
-                                    <Image src='/assets/check.svg' width={20} height={20}/>
-                                    <h4>HIPAA</h4>
-                                </div>
-                                <div className={styles.cert}>
-                                    <Image src='/assets/check.svg' width={20} height={20}/>
-                                    <h4>GDRP</h4>
-                                </div>
-                                <div className={styles.cert}>
-                                    <Image src='/assets/check.svg' width={20} height={20}/>
-                                    <h4>CCPA</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div className={styles.heroContainer}>
+            <Image className={styles.heroBackground} src='/assets/heroBackground4.svg' width={500} height={500} />
+            <div className={styles.heroContentContainer + ' wrapper'}>
+            <Image src='/assets/cylinders.svg'  className={styles.cylinders} width={200} height={200}/>
+            <Image src='/assets/cubes.svg'  className={styles.cubes} width={200} height={200}/>
+            <div className={styles.heroTextContainer}>
+                <Image className={styles.logo} src='/assets/logoWhite.svg' width={125} height={50}/>
+                <h1 className={styles.headLine}>An agentic AI system that accelerates <span className={styles.gray}>pricing decisions.</span></h1>
+                <p className={styles.secondary}>We are building an end-to-end enterprise pricing system that uses AI agents to help companies drive revenue.</p>
+                <div className={styles.buttonContainer}>
+                    <button className={'buttonBoilerplate ' + 'contactButton ' + styles.updates} onClick={scrollToNewsletter}>Company Updates</button>
+                    <button className={'buttonBoilerplate ' + 'darkButton ' + styles.contact} onClick={handleContactClick}>Contact Us</button>
                 </div>
             </div>
-            <div className={styles.imageContainer}>
-               <Image src={'/assets/heroImage4.svg'} width={550} height={550}/>
             </div>
+            
         </div>
     );
 }

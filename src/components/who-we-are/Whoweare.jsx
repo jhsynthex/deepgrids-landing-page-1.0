@@ -46,16 +46,16 @@ export default function Whoweare() {
     return (
         <div className={styles.whoweareEntireContainer}>
             <div className={styles.missionContainer  + ' wrapper'}>
-                <div className={styles.missionHeader}>
-                    <h4>Mission Statement</h4>
-                    <div className={styles.grayLine}></div>
+                <div className={'missionHeader'}>
+                    <h4 className={'missionText'}>Mission Statement</h4>
+                    <div className={'grayLine'}></div>
                 </div>
                 <div className={styles.missionStatement}>
                     <div className={styles.blackVertical}></div>
                     <div className={styles.grayGradient}>
                         <h1>We augment corporate strategy with agentic AI, <span className={styles.grayText}>starting with enterprise SaaS Pricing.</span></h1>
-                        </div>
                     </div>
+                </div>
             </div>
             <div className={styles.valuesContainer}>
                 <div className={styles.valuesContentContainer}>

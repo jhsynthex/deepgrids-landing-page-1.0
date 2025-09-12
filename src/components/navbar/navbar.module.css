@@ -40,6 +40,7 @@
 
 .navLinksContainer h4 {
     color: var(--color-light-gray);
+    font-weight: 300;
 }
 
 .navRightContainer {
@@ -53,7 +54,6 @@
 .navRightContainer h4{
     color: var(--color-light-gray);
 }
-
 
 .contactButton {
     color: var(--color-black);
@@ -78,5 +78,203 @@
 
 .navHidden {
     transform: translateY(-100%);
+}
+
+/* Hamburger Menu */
+.hamburgerMenu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburgerLine {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-white);
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.hamburgerLine1 {
+    transform: rotate(45deg);
+}
+
+.hamburgerLine2 {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.hamburgerLine3 {
+    transform: rotate(-45deg);
+}
+
+.mobileMenu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-black);
+    z-index: 99;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mobileMenuOpen {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobileMenuContent {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+}
+
+.mobileMenuContent h4 {
+    color: var(--color-light-gray);
+    font-size: 18px;
+    margin: 0;
+}
+
+.mobileContactButton {
+    color: var(--color-black);
+    background-color: var(--color-white);
+    cursor: pointer;
+    padding: 12px 24px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.navLinksContainer button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.navLinksContainer button h4 {
+    color: var(--color-light-gray);
+    margin: 0;
+}
+
+.mobileMenuContent button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.mobileMenuContent button h4 {
+    color: var(--color-light-gray);
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .navContainer {
+        height: 55px;
+    }
+    
+    .navLeftContainer {
+        gap: 20px;
+    }
+    
+    .navLinksContainer {
+        gap: 30px;
+    }
+    
+    .navRightContainer {
+        gap: 25px;
+    }
+    
+    .navLogo {
+        width: 110px !important;
+        height: 44px !important;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navContainer {
+        height: 50px;
+    }
+    
+    .navLinksContainer,
+    .navRightContainer {
+        display: none;
+    }
+    
+    .hamburgerMenu {
+        display: flex;
+    }
+    
+    .mobileMenu {
+        top: 50px;
+    }
+    
+    .navLogo {
+        width: 100px !important;
+        height: 40px !important;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .navContainer {
+        height: 45px;
+    }
+    
+    .mobileMenu {
+        top: 45px;
+    }
+    
+    .navLogo {
+        width: 90px !important;
+        height: 36px !important;
+    }
+    
+    .smallGrayDivider {
+        height: 25px;
+    }
+    
+    .mobileMenuContent h4 {
+        font-size: 16px;
+    }
+    
+    .mobileContactButton {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Very small mobile styles */
+@media (max-width: 360px) {
+    .navLogo {
+        width: 80px !important;
+        height: 32px !important;
+    }
+    
+    .mobileMenuContent h4 {
+        font-size: 14px;
+    }
+    
+    .mobileContactButton {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
 }
 

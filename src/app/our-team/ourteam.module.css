@@ -1,7 +1,8 @@
 .teamContainer {
     height: auto;
     width: 100%;
-    padding-top: 80px;
+    margin-top: 60px;
+    
 }
 
 .teamContentContainer {
@@ -23,6 +24,24 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+}
+
+.missionStatement {
+    display: flex;
+    flex-direction: row;
+}
+
+.blackVertical {
+    width: 10px;
+    background-color: var(--color-black);
+}
+
+.grayGradient {
+    background: linear-gradient(90deg, #F4F4F4 0%, #FFFFFF 100%);
+}
+
+.grayGradient h1 {
+    margin-left: 25px;
 }
 
 .teamCardContainer {
@@ -59,4 +78,123 @@
 }
 
 .tagLine {
+    font-weight: 300;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .teamContainer {
+        margin-top: 80px;
+    }
+    
+    .teamContentContainer {
+        padding-top: 30px;
+    }
+    
+    .headerText {
+        gap: 30px;
+    }
+    
+    .coreTeamContainer,
+    .boardOfDirectorsContainer,
+    .boardOfAdvisorsContainer {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 100px;
+        row-gap: 40px;
+    }
+    
+    .teamCardContainer {
+        margin-top: 60px;
+        gap: 60px;
+        margin-bottom: 60px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .teamContainer {
+        margin-top: 100px;
+    }
+    
+    .teamContentContainer {
+        padding-top: 20px;
+    }
+
+    .sectionHeader {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    
+    .headerText {
+        gap: 50px;
+    }
+    
+    .pageHeader h2 {
+        font-size: 24px;
+    }
+    
+    .tagLine {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+    
+    .coreTeamContainer,
+    .boardOfDirectorsContainer,
+    .boardOfAdvisorsContainer {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 50px;
+        justify-items: center;
+    }
+    
+    .teamCardContainer {
+        margin-top: 50px;
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .teamContainer {
+        margin-top: 120px;
+    }
+    
+    .sectionHeader {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .teamContentContainer {
+        padding-top: 15px;
+    }
+    
+    .headerText {
+        gap: 50px;
+    }
+    
+    .pageHeader {
+        gap: 10px;
+    }
+    
+    .pageHeader h2 {
+        font-size: 20px;
+    }
+    
+    .tagLine {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+    
+    .coreTeamContainer,
+    .boardOfDirectorsContainer,
+    .boardOfAdvisorsContainer {
+        row-gap: 40px;
+    }
+    
+    .teamCardContainer {
+        margin-top: 40px;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
 }

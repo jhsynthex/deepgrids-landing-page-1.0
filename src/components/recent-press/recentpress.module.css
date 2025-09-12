@@ -1,18 +1,42 @@
 .recentPressContainer {
     height: auto;
-    margin-top: 120px;
-    background-color: red;
+    padding-top: 60px;
+    margin-top: 60px;
+    background-color: var(--color-light-gray);
+
 }
 
+.pressContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.pressContainer > * {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    margin-bottom: 50px;
+}
+
+.pressContainer {
+    display: flex;
+}
+
+
 .newsletter {
-    background-color: var(--color-light-gray);
+    background: linear-gradient(180deg, #545353 0%, #000000 100%);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     text-align: center;
 }
 
@@ -21,21 +45,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     width: 50%;
 }
 
+.emailCapture h1 {
+    color: var(--color-white);
+}
+
+.emailCapture span {
+    color: var(--color-medium-gray)
+;}
+
 .emailCapture p {
-    color: var(--color-dark-gray);
+    color: var(--color-medium-gray);
+}
+
+.emailLabel {
+    color: var(--color-white);
 }
 
 .emailContainer {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    width: 100%;
+    text-align: center;
+    width: 80%;
     justify-content: center;
     gap: 5px;
+    text-align: left;
 }
 
 .noSpam {
@@ -44,7 +81,6 @@
 }
 
 .captureFields {
-    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 15px;
@@ -52,8 +88,8 @@
 
 .submit {
     text-decoration: none;
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-white);
+    color: var(--color-black);
 }
 .captureFields input {
     flex: 1;
@@ -66,3 +102,206 @@
 }
 
 
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+    .recentPressContainer {
+        margin-top: 80px;
+    }
+    
+    .newsletter {
+        flex-direction: column;
+        gap: 25px;
+        padding: 40px 20px;
+    }
+    
+    .emailCapture {
+        width: 100%;
+        max-width: 600px;
+        gap: 25px;
+    }
+    
+    .pressContainer {
+        flex-direction: column;
+        gap: 5px;
+        padding: 20px;
+    }
+    
+    .pressContainer > * {
+        max-width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .recentPressContainer {
+        margin-top: 60px;
+    }
+    
+    .newsletter {
+        flex-direction: column;
+        gap: 0px;
+        padding: 30px 15px;
+    }
+    
+    .emailCapture {
+        width: 100%;
+        max-width: 100%;
+        gap: 25px;
+    }
+    
+    .emailCapture h1 {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    
+    .emailCapture p {
+        font-size: 14px;
+    }
+    
+    .pressContainer {
+        flex-direction: column;
+        gap: 0px;
+        padding: 15px;
+    }
+    
+    .pressContainer > * {
+        max-width: 100%;
+        min-width: auto;
+    }
+    
+    .captureFields {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .captureFields input,
+    .captureFields button {
+        width: 100%;
+    }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+    .recentPressContainer {
+        margin-top: 40px;
+    }
+    
+    .newsletter {
+        padding: 20px 10px;
+        gap: 0px;
+    }
+    
+    .emailCapture {
+        gap: 25px;
+    }
+
+    .emailCapture h1 {
+        font-size: 20px;
+    }
+    
+    .emailCapture p {
+        font-size: 13px;
+    }
+    
+    .pressContainer {
+        padding: 10px;
+        gap: 0px;
+    }
+    
+    .captureFields {
+        gap: 8px;
+    }
+}
+
+/* Hide second envelope on smaller screens */
+@media screen and (max-width: 1024px) {
+    .envelopeTwo {
+        display: none;
+    }
+
+    .envelopeOne {
+        transform: scale(0.3);
+    }
+}
+
+/* Reorder newsletter elements on smaller screens */
+@media screen and (max-width: 1024px) {
+    .newsletter {
+    }
+}
+
+/* Reduce vertical space between envelope and text on smaller screens */
+@media screen and (max-width: 1024px) {
+    .newsletter {
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .newsletter {
+        gap: 0px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .newsletter {
+        gap: 0px;
+    }
+}
+
+/* Aggressively reduce spacing between envelope and text */
+@media screen and (max-width: 1024px) {
+    .newsletter {
+        gap: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .emailCapture {
+        margin-top: -20px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .newsletter img {
+        margin-bottom: -10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .newsletter {
+        gap: 0px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+    .emailCapture {
+        margin-top: -30px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .newsletter img {
+        margin-bottom: -15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .newsletter {
+        gap: 0px;
+        padding-top: 0px;
+        padding-bottom: 60px;
+    }
+    
+    .emailCapture {
+        margin-top: -30px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .newsletter img {
+        margin-bottom: -20px;
+    }
+}

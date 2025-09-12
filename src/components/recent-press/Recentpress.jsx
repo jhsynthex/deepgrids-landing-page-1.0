@@ -1,71 +1,66 @@
-"use client"
-
 import styles from './recentpress.module.css'
-import { useState } from 'react';
 import Image from 'next/image';
 import '/src/app/globals.css';
+import Presscard from '../presscards/Presscard';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import NewsletterForm from './NewsletterForm';
 
-
-export default function Recentpress() { 
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const subscribeUser = async (event) => {
-    event.preventDefault();
-
-    if (!email.trim()) {
-      setMessage("❌ Please enter a valid email.");
-      return;
-    }
-
-    try {
-      const response = await fetch("/api/company-updates", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-      console.log("Response:", data);
-
-      if (data.success) {
-        setMessage("✅ Successfully subscribed!");
-        setEmail(""); 
-      } else {
-        setMessage(`❌ Error: ${data.error}`);
-      }
-    } catch (error) {
-      console.error("Error subscribing:", error);
-      setMessage("❌ Subscription failed. Please try again.");
-    }
-  };
+// Server component to fetch posts
+async function getRecentPosts() {
+  const postsDirectory = path.join(process.cwd(), 'posts');
+  const filenames = fs.readdirSync(postsDirectory);
+  
+  const posts = filenames.map((filename) => {
+    const filePath = path.join(postsDirectory, filename);
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const { data } = matter(fileContents);
     
-    return (
-    <div className={styles.recentPressContainer}>
-        <div className={styles.pressContainer}>
-        </div>
+    return {
+      slug: filename.replace('.md', ''),
+      title: data.title,
+      image: data.image,
+      author: data.author,
+      glance: data.glance,
+      authorRole: data.authorRole,
+      authorImage: data.authorImage,
+      date: data.date,
+      type: data.type,
+    };
+  });
+  
+  // Sort by date (most recent first) and take the first 3
+  return posts
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 3);
+}
 
-        <div className={styles.newsletter}>
-            <Image src='/assets/signupEnvelopes.svg' width={275} height={275}/>
+export default async function Recentpress() { 
+  const recentPosts = await getRecentPosts();
+    
+  return (
+    <div className={styles.recentPressContainer}>
+        <div className='sectionHeader + wrapper'>
+            <Image src={'/assets/sectionHeaderBlack.svg'} alt='Black section header' width={20} height={20}></Image>
+            <p>Recent Press</p>
+          </div>
+        <div className={styles.pressContainer + ' wrapper'}>
+            {recentPosts.map((post, index) => (
+                <Presscard key={post.slug} post={post} />
+            ))}
+        </div>
+        <div id="newsletter" className={styles.newsletter}>
+            <Image className={styles.envelopeOne} src='/assets/envelopes.svg' width={200} height={200}/>
             <div className={styles.emailCapture}>
-                <h1>Sign up for company updates</h1>
+                <h1>Sign up for <span>company updates</span></h1>
                 <p>Receive email updates about Deepgrids, its products, and other important information. Get the latest insights delivered to your inbox.</p>
                 <div className={styles.emailContainer}>
-                    <h4>Email</h4>
-                    <form className={styles.captureFields} onSubmit={subscribeUser}>
-                        <input className={'textInput ' + styles.input} placeholder='Enter your email' type='email' value={email} onChange={handleChange}/>
-                        <button className={'buttonBoilerplate ' + styles.submit} type='submit'>Subscribe</button>
-                    </form>
-                    {message && <p className={styles.message}>{message}</p>}
-                    <h4 className={styles.noSpam}>No spam. Unsubscribe anytime.</h4>
+                  <NewsletterForm />
                 </div>
-                
             </div>
-            <Image src='/assets/signupEnvelopes.svg' width={275} height={275}/>
+            <Image className={styles.envelopeTwo} src='/assets/envelopes.svg' width={200} height={200}/>
         </div>
     </div>
-); }
+  );
+}

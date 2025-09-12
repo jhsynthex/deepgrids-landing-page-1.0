@@ -14,21 +14,22 @@ const Teamcard = (props) => {
   return (
     <>
       <div className={styles.teamCard} onClick={openModal}>
+   
           <Image 
-            src={props.image} 
-            width={275} 
-            height={275} 
-            alt={props.alt}
-            className={styles.bioImage}
-          />
-          <div className={styles.bioContentContainer}>
-            <h5 className={styles.name}>{props.name}</h5>
-            <p className={styles.role}>{props.role}</p>
-            <div className={styles.bioLinkContainer}>
-              <div className={styles.bioLink}><p>Read bio</p></div>
-              <Image src={'/assets/arrowBlack.svg'} width={15} height={15} />
-            </div>
-          </div>
+                src={props.image} 
+                width={275} 
+                height={275} 
+                alt={props.alt}
+                className={styles.bioImage}
+              />
+              <div className={styles.bioContentContainer}>
+                <h5 className={styles.name}>{props.name}</h5>
+                <p className={styles.role}>{props.role}</p>
+                <div className={styles.bioLinkContainer}>
+                  <div className={styles.bioLink}><p>Read bio</p></div>
+                </div>
+              </div>
+        
       </div>
 
       {isModalOpen && (
@@ -36,14 +37,15 @@ const Teamcard = (props) => {
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
             <button className={styles.closeButton} onClick={closeModal}>×</button>
             <div className={styles.modalContent}>
-              <Image 
-                src={props.image} 
-                width={200} 
-                height={200} 
-                alt={props.alt} 
-                className={styles.modalImage} 
-              />
+            <Image 
+                    src={props.image} 
+                    width={200} 
+                    height={200} 
+                    alt={props.alt} 
+                    className={styles.modalImage} 
+                  />
                   <div className={styles.modalText}>
+                  
                       <div className={styles.topContainer}>
                         <div className={styles.blackDivider}></div>
                         <div className={styles.topTextContainer}>

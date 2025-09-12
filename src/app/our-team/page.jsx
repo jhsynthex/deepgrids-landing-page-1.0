@@ -9,14 +9,16 @@ export default function OurTeam() {
         <div className={styles.teamContainer}>
             <div className={styles.teamContentContainer + ' wrapper'}>
                 <div className={styles.headerText}>
-                        <div className={styles.pageHeader}>
-                            <Image src={'/assets/sectionHeaderBlack.svg'} width={30} height={30} alt='Black section header.'/>
-                            <h2>Our Team</h2>
-                        </div>
-                        <h2 className={styles.tagLine}>We are engineers, creatives, business leaders, and industry experts that build with purpose.</h2>
-                        <div className=' sectionHeader'>
+                <div className={styles.missionStatement}>
+                    <div className={styles.blackVertical}></div>
+                    <div className={styles.grayGradient}>
+                        <h1>Our Team</h1>
+                    </div>
+                </div>
+                        <h5 className={styles.tagLine}>We are engineers, creatives, business leaders, and industry experts that build with purpose.</h5>
+                        <div className={'sectionHeader '}>
                             <Image src={'/assets/sectionHeaderBlack.svg'} alt='Black section header' width={20} height={20}></Image>
-                            <h4>Core Team</h4>
+                            <p>Core Team</p>
                         </div>
                 </div>
                     <div className={styles.teamCardContainer + ' wrapper'}>
@@ -34,6 +36,7 @@ She has defined contract terms, led negotiations and closed deals with annual va
 
 Complementing her deal leadership work is several years’ experience in corporate strategy and start-up identification, global team leadership in software product management, and competitor/market analyses. Prior to Broadridge, her business development experience also included global deal pricing and contract negotiation within IBM Global Services where she successfully led and closed global deals.
 '/>
+                            
                             <Teamcard image='/assets/teamMembers/EshanSharma.svg' alt='Eshan Sharma, the Principal AI Architect at Deepgrids' name='Eshan Sharma' role='Principle AI Architect' LinkedIn="https://www.linkedin.com/in/eshan-sharma-deepgrids/" bio="Eshan Sharma is a founding member and the Principal AI Architect at Deepgrids, where he leads the technical vision, strategy, and architecture for the company's artificial intelligence initiatives. He is responsible for designing and driving the overall AI framework, ensuring it aligns with core business goals while overseeing the implementation of cutting-edge AI solutions. His work is central to developing the agentic systems and fine-tuned LLMs that power Deepgrid’s pricing optimization products, giving clients a distinct edge in enterprise software sales.<br/><br/>
 
 Eshan’s path as a software engineer was set the moment he discovered Scratch and HTML in the 5th grade. While his passion for building with code has been a constant, he experienced a second defining moment with the dawn of the modern AI revolution. It gave him the same profound feeling of discovery he had as a child, making it clear that AI was the field he would spend his life mastering. This focus drove him to earn a Bachelor’s in Software Engineering and a Master’s in Applied Artificial Intelligence with high honors from Stevens Institute of Technology, equipping him with the expertise to build AI products from zero to one.<br/><br/>
@@ -51,9 +54,9 @@ Alex studied Political Science at Drew University, and has always gravitated tow
 Alex is eager to broaden her horizons, so she reads as many books as she can get her hands on. She believes education is the root to all success - the importance of not only having access to it, but also being proactive enough to consume as much as you can. Besides reading, she finds herself dedicated to swimming, dancing, and hiking, and traveling when she can."/>
                         </div>
                     </div>
-                        <div className=' sectionHeader'>
+                        <div className={'sectionHeader ' + styles.sectionHeader}>
                             <Image src={'/assets/sectionHeaderBlack.svg'} width={20} height={20}></Image>
-                            <h4>Board of Directors</h4>
+                            <p>Board of Directors</p>
                         </div>
                     <div className={styles.teamCardContainer + ' wrapper'}>
                         <div className={styles.boardOfAdvisorsContainer}>
@@ -73,9 +76,9 @@ Complementing her deal leadership work is several years’ experience in corpora
 '/>
                         </div>
                     </div>
-                        <div className=' sectionHeader'>
+                        <div className={'sectionHeader ' + styles.sectionHeader}>
                             <Image src={'/assets/sectionHeaderBlack.svg'} width={20} height={20}></Image>
-                            <h4>Board of Advisors</h4>
+                            <p>Board of Advisors</p>
                         </div>
                     <div className={styles.teamCardContainer + ' wrapper'}>
                         <div className={styles.boardOfAdvisorsContainer}>

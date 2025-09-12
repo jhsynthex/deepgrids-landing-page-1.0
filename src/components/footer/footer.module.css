@@ -1,0 +1,164 @@
+.footerContainer {
+    background-color: var(--color-black);
+    height: auto;
+    min-height: 300px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footerContentContainer {
+    height: 100%;
+    width: 100%;
+}
+
+
+.topContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    margin-bottom: 80px;
+}
+
+.companyDescription {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 30px;
+
+}
+
+.companyDescription p {
+    color: var(--color-medium-gray);
+    width: 40%;
+}
+
+.companyInformation {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    white-space: nowrap;
+}
+
+.link {
+    color: var(--color-white);
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-white);
+    transition: width 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.links {
+    color: var(--color-dark-gray);
+    font-weight: 600;
+}
+
+.bottomContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.bottomContainer h4 {
+    font-weight: 300;
+    color: var(--color-white);
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    .footerContainer {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .topContainer {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+    
+    .companyDescription {
+        align-items: center;
+    }
+    
+    .companyDescription p {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .linkContainer {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .bottomContainer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .bottomContainer h4 {
+        font-size: 14px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    .footerContainer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .topContainer {
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .companyDescription {
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .companyDescription p {
+        font-size: 13px;
+
+    }
+    
+    .linkContainer {
+        gap: 12px;
+    }
+    
+    .links {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .link p {
+        font-size: 13px;
+    }
+    
+    .bottomContainer h4 {
+        font-size: 12px;
+
+    }
+}
