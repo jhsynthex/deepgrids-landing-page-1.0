@@ -55,7 +55,7 @@ Alex is eager to broaden her horizons, so she reads as many books as she can get
                         </div>
                     </div>
                         <div className={'sectionHeader ' + styles.sectionHeader}>
-                            <Image src={'/assets/sectionHeaderBlack.svg'} width={20} height={20}></Image>
+                            <Image src={'/assets/sectionHeaderBlack.svg'} width={20} height={20} alt="Section header icon"></Image>
                             <p>Board of Directors</p>
                         </div>
                     <div className={styles.teamCardContainer + ' wrapper'}>
@@ -77,7 +77,7 @@ Complementing her deal leadership work is several years’ experience in corpora
                         </div>
                     </div>
                         <div className={'sectionHeader ' + styles.sectionHeader}>
-                            <Image src={'/assets/sectionHeaderBlack.svg'} width={20} height={20}></Image>
+                            <Image src={'/assets/sectionHeaderBlack.svg'} width={20} height={20} alt="Section header icon"></Image>
                             <p>Board of Advisors</p>
                         </div>
                     <div className={styles.teamCardContainer + ' wrapper'}>

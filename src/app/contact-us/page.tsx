@@ -1,11 +1,10 @@
-import styles from './contactus.module.css'
 
 
-export default function OurTeam() {
+export default function ContactUs() {
     return ( 
-    <div>
-
-        
-    </div>
+        <div>
+            <h1>Contact Us</h1>
+            <p>Coming soon...</p>
+        </div>
     );
 }

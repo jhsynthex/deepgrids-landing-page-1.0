@@ -3,12 +3,12 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkHtml from "remark-html";
 import '/src/app/globals.css';
 import Image from 'next/image';
 
-export default async function PostPage({ params }) {
-    const { slug } = params;
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
   
     // Find the Markdown file
     const filePath = path.join(process.cwd(), "posts", `${slug}.md`);
@@ -17,16 +17,16 @@ export default async function PostPage({ params }) {
     // Parse frontmatter + content
     const { data, content } = matter(fileContents);
   
-    // Convert markdown to HTML
+    // Convert markdown to HTML with proper paragraph handling
     const processedContent = await remark()
-      .use(html)
+      .use(remarkHtml, { sanitize: false })
       .process(content);
     const contentHtml = processedContent.toString();
 
     // Format date to "month-day, year" format
-    const formatDate = (dateString) => {
+    const formatDate = (dateString: string) => {
         const date = new Date(dateString);
-        const options = { 
+        const options: Intl.DateTimeFormatOptions = { 
             year: 'numeric', 
             month: 'long', 
             day: 'numeric' 
@@ -50,7 +50,7 @@ export default async function PostPage({ params }) {
             </div>
         
         <div className={styles.bodyContainer}>
-            <Image src={data.image} width={500} height={500}/>
+            <Image src={data.image} width={500} height={500} alt={data.title || "Press release image"}/>
             <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </div>
       </div>
